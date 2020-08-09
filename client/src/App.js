@@ -5,7 +5,7 @@ import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 import {Navigation} from './components/Navbar'
 
-import "bootswatch/dist/journal/bootstrap.min.css"
+import "bootswatch/dist/lux/bootstrap.min.css"
 function App() {
   return (
     <Router>

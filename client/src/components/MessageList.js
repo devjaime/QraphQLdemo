@@ -9,6 +9,8 @@ const GET_MESSAGES = gql`
         title
         content
         author
+        price
+        image
     }
   }
 `;
@@ -23,12 +25,15 @@ const MessageList = () => {
         <div className="row">
            <div className="col-mod-6 offset-md-3">
             {
-                data.messages.map(({_id,title,content,author}) => (
+                data.messages.map(({_id,title,content,author, image,price}) => (
                     <div key={_id} className="card m-2">
                         <div className="card-body">
                              <h4>{title}</h4>
-                             <p>{content}</p>
-                             <p>{author}</p>
+                             <p>Vendedor: {author}</p>
+                             <p>Precio: {price}</p>
+                             <a className="btn btn-primary stretched-link" href={content}>Ir al detalle</a>
+                             <img src={image} alt=""/>
+                       
                         </div>
                     </div>
                 ))
