@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {gql} from 'apollo-boost'
 import {useMutation} from '@apollo/react-hooks'
+
+import 'animate.css'
 const CREATE_MESSAGE= gql`
     mutation CreateMessage($title:String!, $content:String!, $author:String!,$price:String!, $image:String!){
         createMessage(title:$title, content:$content, author:$author, price:$price, image:$image){
@@ -23,7 +25,7 @@ const MessageList = () => {
     const [createMessage] = useMutation(CREATE_MESSAGE)
 
     return(
-        <div className="row">
+        <div className="row animate__animated animate__fadeIn">
             <div className="col-md-6 offset-md-3">
                 <div className="card-body">
                     <form onSubmit ={async e => {
