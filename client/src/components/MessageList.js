@@ -25,7 +25,7 @@ const MessageList = () => {
     return(
                    
 
-        <div className="row animate__animated animate__fadeIn">
+        <div className="row animate__animated animate__pulse">
            <div className="col-mod-6 offset-md-3 ">
             {
                 data.messages.map(({_id,title,content,author, image,price}) => (
@@ -35,9 +35,9 @@ const MessageList = () => {
                         <div className="card-body">
                              <h4>{title}</h4>
                              <p>Vendedor: {author}</p>
-                             <p>Precio: {price}</p>
+                             <p className="animate__animated animate__fadeInRight">Precio: {price}</p>
                              <a className="btn btn-primary stretched-link" href={content}>Ir al detalle</a>
-                             <img src={image} alt="" className="animate__animated animate__fadeInRight"/>
+                             <img src={image} alt="" className="animate__animated animate__fadeInLeft"/>
                        
                         </div>
                         

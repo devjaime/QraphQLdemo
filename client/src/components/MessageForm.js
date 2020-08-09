@@ -25,7 +25,7 @@ const MessageList = () => {
     const [createMessage] = useMutation(CREATE_MESSAGE)
 
     return(
-        <div className="row animate__animated animate__fadeIn">
+        <div className="row animate__animated animate__pulse">
             <div className="col-md-6 offset-md-3">
                 <div className="card-body">
                     <form onSubmit ={async e => {
@@ -34,22 +34,22 @@ const MessageList = () => {
                         await createMessage({variables:{title, content,author, price, image}})
                         window.location.href="/"
                     }}>
-                        <div className="form-group">
+                        <div className="form-group animate__animated animate__fadeInLeft">
                             <input type="text" placeholder= "Vendedor" className="form-control"  onChange={e => setAuthor(e.target.value)} value={author} />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group animate__animated animate__fadeInRight">
                             <input type="text" placeholder= "Descripción producto" className="form-control" onChange={e => setTitle(e.target.value)}value={title} />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group animate__animated animate__fadeInLeft">
                             <input type="text" placeholder= "Contenido" className="form-control" onChange={e => setContent(e.target.value)} value={content} />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group animate__animated animate__fadeInRight">
                             <input type="text" placeholder= "Precio" className="form-control" onChange={e => setPrice(e.target.value)} value={price} />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group animate__animated animate__fadeInLeft">
                             <input type="text" placeholder= "Imagen" className="form-control" onChange={e => setImage(e.target.value)}value={image} />
                         </div>
-                        <button className="btn btn-block btn-success">
+                        <button className="btn btn-block btn-success animate__animated animate__fadeInRight">
                             Guardar
                         </button>
                     </form>
