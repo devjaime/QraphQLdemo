@@ -3,11 +3,13 @@ type Query {
     messages:[Message!]
 }
 type Mutation{
-    createMessage(title: String!, content:String, author:String!): Message
+    createMessage(title: String!, content:String, author:String!, price:String!, image:String!): Message
 }
 type Message {
     _id:ID!
     title:String!
     content:String!
     author:String!
+    price:String!
+    image:String!
 }
