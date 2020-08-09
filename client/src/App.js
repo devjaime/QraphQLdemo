@@ -3,14 +3,20 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
+import {Navigation} from './components/Navbar'
 
+import "bootswatch/dist/journal/bootstrap.min.css"
 function App() {
   return (
     <Router>
+      <Navigation/>
+      <div className="container p-4">
       <Switch>
         <Route exact path="/" component={MessageList} />
         <Route exact path="/new-message" component={MessageForm} />
       </Switch>
+      </div>
+
     </Router>
   );
 }
